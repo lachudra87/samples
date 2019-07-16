@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:paddingTop="@dimen/p_n"
+        android:paddingBottom="@dimen/p_n"
+        android:paddingLeft="@dimen/p_l"
+        android:paddingRight="@dimen/p_l">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hero_name"
+            android:layout_gravity="center_vertical|start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Hero goood hero"/>
+
+</LinearLayout>

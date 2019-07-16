@@ -49,6 +49,17 @@
             tools:visibility="gone"
             android:text="@string/no_result_info_text"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result"
+            tools:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/m_l"
+            app:layout_constraintTop_toBottomOf="@+id/search_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:itemCount="10"
+            tools:listitem="@layout/search_item"/>
+
     <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/loading_indicator"
             style="?android:attr/progressBarStyle"
