@@ -1,5 +1,9 @@
 package pl.bl.robotpatterntests.robot
 
+import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
+import com.schibsted.spain.barista.interaction.BaristaClickInteractions.clickOn
+import com.schibsted.spain.barista.interaction.BaristaEditTextInteractions.writeTo
+import pl.bl.robotpatterntests.R
 import pl.bl.robotpatterntests.domain.model.Hero
 
 fun inMainScreen(action: MainScreen.() -> Unit) {
@@ -8,19 +12,19 @@ fun inMainScreen(action: MainScreen.() -> Unit) {
 
 class MainScreen {
     fun assertSearchButtonDisplayed() {
-        TODO("not implemented")
+        assertDisplayed(R.id.search_button)
     }
 
     fun assertSearchEditTextDisplayed() {
-        TODO("not implemented")
+        assertDisplayed(R.id.search_text)
     }
 
     fun clickOnSearchButton() {
-        TODO("not implemented")
+        clickOn(R.id.search_button)
     }
 
     fun inputSearch(query: String) {
-        TODO("not implemented")
+        writeTo(R.id.search_text, query)
     }
 
     fun assertSearchResultDisplayed(heroes: Collection<Hero>) {
@@ -36,15 +40,15 @@ class MainScreen {
     }
 
     fun assertNoResultDisplayed() {
-        TODO("not implemented")
+        assertDisplayed(R.id.no_data_info)
     }
 
     fun assertErrorDisplayed() {
-        TODO("not implemented")
+        assertDisplayed(R.id.error_info)
     }
 
     fun assertLoadingDisplayed() {
-        TODO("not implemented")
+        assertDisplayed(R.id.loading_indicator)
     }
 
     fun clickOnSearchItem(hero: Hero) {
