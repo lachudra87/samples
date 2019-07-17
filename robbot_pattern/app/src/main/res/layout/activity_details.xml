@@ -17,6 +17,7 @@
             android:layout_marginTop="@dimen/m_xl"
             app:layout_constraintTop_toTopOf="parent"
             android:gravity="center_horizontal"
+            style="@style/H1"
             tools:text="Hero of disaster"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -26,6 +27,7 @@
             android:layout_marginStart="@dimen/m_xxl"
             android:layout_marginEnd="@dimen/m_xxl"
             android:layout_marginTop="@dimen/m_xxl"
+            style="@style/BaseText"
             app:layout_constraintTop_toBottomOf="@id/hero_name"
             tools:text="Long description of a hero, not to include many things that he/she has done, to be brave and so on and so on"/>
 

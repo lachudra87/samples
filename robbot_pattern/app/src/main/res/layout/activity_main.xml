@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             tools:visibility="gone"
+            style="@style/BaseText"
             android:text="@string/error_info_text"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -49,6 +50,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             tools:visibility="gone"
+            style="@style/BaseText"
             android:text="@string/no_result_info_text"/>
 
     <androidx.recyclerview.widget.RecyclerView

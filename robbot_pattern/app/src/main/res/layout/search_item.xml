@@ -16,6 +16,7 @@
             android:layout_gravity="center_vertical|start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/BaseText"
             tools:text="Hero goood hero"/>
 
 </LinearLayout>

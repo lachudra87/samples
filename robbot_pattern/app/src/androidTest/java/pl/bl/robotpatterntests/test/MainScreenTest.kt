@@ -140,7 +140,7 @@ class MainScreenTest {
     THEN  Error displayed
      */
     @Test
-    fun should_display_error_when_no_cannot_fetch_data() {
+    fun should_display_error_when_cannot_fetch_data() {
         // GIVEN
         inApp {
             heroesError(Exception())
@@ -159,12 +159,12 @@ class MainScreenTest {
     }
 
     /**
-    GIVEN Opened application, search data provided
+    GIVEN Opened application
     WHEN  User searches for hero
     THEN  Loading indicator displayed
      */
     @Test
-    fun should_loading_when_no_loading_data() {
+    fun should_show_loading_when_loading_data() {
         // GIVEN
         inApp {
             heroesLoading()
