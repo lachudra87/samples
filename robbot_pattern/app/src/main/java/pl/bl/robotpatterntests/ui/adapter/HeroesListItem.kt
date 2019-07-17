@@ -7,7 +7,7 @@ import pl.bl.robotpatterntests.R
 import pl.bl.robotpatterntests.domain.model.Hero
 
 class HeroesListItem(
-    private val myHero: Hero
+    val myHero: Hero
 ) : Item(myHero.id.toLong()) {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.hero_name.text = myHero.name

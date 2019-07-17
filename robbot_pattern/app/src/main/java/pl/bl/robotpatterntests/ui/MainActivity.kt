@@ -18,7 +18,7 @@ import pl.bl.robotpatterntests.ui.adapter.HeroesAdapter
 class MainActivity : AppCompatActivity() {
 
     private val repository = RepositoryComponent.getRepository()
-    private val adapter = HeroesAdapter()
+    private val adapter = HeroesAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

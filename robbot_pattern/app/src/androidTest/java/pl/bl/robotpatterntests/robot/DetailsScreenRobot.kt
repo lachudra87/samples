@@ -1,5 +1,7 @@
 package pl.bl.robotpatterntests.robot
 
+import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
+import pl.bl.robotpatterntests.R
 import pl.bl.robotpatterntests.domain.model.Hero
 
 fun inDetailsScreen(action: DetailsScreen.() -> Unit) {
@@ -8,10 +10,11 @@ fun inDetailsScreen(action: DetailsScreen.() -> Unit) {
 
 class DetailsScreen {
     fun assertDisplayed() {
-        TODO("not implemented")
+        assertDisplayed(R.id.details_content)
     }
 
     fun assertHeroDetailsDisplayed(hero: Hero) {
-        TODO("not implemented")
+        assertDisplayed(R.id.hero_name, hero.name)
+        assertDisplayed(R.id.hero_description, hero.description)
     }
 }
