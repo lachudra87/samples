@@ -7,6 +7,8 @@ import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.scrollTo
 import androidx.test.espresso.matcher.ViewMatchers.*
+import com.schibsted.spain.barista.assertion.BaristaEnabledAssertions.assertDisabled
+import com.schibsted.spain.barista.assertion.BaristaEnabledAssertions.assertEnabled
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import com.schibsted.spain.barista.interaction.BaristaClickInteractions.clickOn
 import com.schibsted.spain.barista.interaction.BaristaEditTextInteractions.writeTo
@@ -88,6 +90,22 @@ class MainScreen {
                 isDescendantOfA(withTagValue(equalTo(hero.id)))
             )
         ).perform(click())
+    }
+
+    fun assertSearchButtonDisabled() {
+        assertDisabled(R.id.search_button)
+    }
+
+    fun assertSearchInputDisabled() {
+        assertDisabled(R.id.search_text)
+    }
+
+    fun assertSearchButtonEnabled() {
+        assertEnabled(R.id.search_button)
+    }
+
+    fun assertSearchInputEnabled() {
+        assertEnabled(R.id.search_text)
     }
 
     private fun scrollToHero(hero: Hero) {

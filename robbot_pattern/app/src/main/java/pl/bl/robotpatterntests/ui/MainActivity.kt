@@ -51,13 +51,25 @@ class MainActivity : AppCompatActivity() {
         loading_indicator.visibility = View.GONE
     }
 
+    private fun blockSearch() {
+        search_button.isEnabled = false
+        search_text.isEnabled = false
+    }
+
+    private fun enableSearch() {
+        search_button.isEnabled = true
+        search_text.isEnabled = true
+    }
+
     private fun onSearchClicked() {
         hideKeyboard()
         val query = search_text.text.toString()
+        blockSearch()
         displayLoading()
         repository.getHeroes(object : HeroesCallback {
             override fun onError(error: Throwable) {
                 displayError()
+                enableSearch()
             }
 
             override fun onData(data: Collection<Hero>) {
@@ -67,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                     val filteredData = data.filter { it.name.contains(query) }
                     displayData(filteredData)
                 }
+                enableSearch()
             }
 
         })

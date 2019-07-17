@@ -183,6 +183,81 @@ class MainScreenTest {
     }
 
     /**
+    GIVEN Opened application
+    WHEN  User searches for hero
+    THEN  search button disabled
+     */
+    @Test
+    fun should_block_search_input_view_when_loading_data() {
+        // GIVEN
+        inApp {
+            heroesLoading()
+            launchActivity(activityRule)
+        }
+
+        // WHEN
+        inMainScreen {
+            clickOnSearchButton()
+        }
+
+        // THEN
+        inMainScreen {
+            assertSearchButtonDisabled()
+            assertSearchInputDisabled()
+        }
+    }
+
+    /**
+    GIVEN Opened application
+    WHEN  User searches for hero
+    THEN  search button disabled
+     */
+    @Test
+    fun should_enable_search_input_view_when_data_fetching_ends_with_success() {
+        // GIVEN
+        inApp {
+            heroesAvailable(HEROES)
+            launchActivity(activityRule)
+        }
+
+        // WHEN
+        inMainScreen {
+            clickOnSearchButton()
+        }
+
+        // THEN
+        inMainScreen {
+            assertSearchButtonEnabled()
+            assertSearchInputEnabled()
+        }
+    }
+
+    /**
+    GIVEN Opened application
+    WHEN  User searches for hero
+    THEN  search button disabled
+     */
+    @Test
+    fun should_enable_search_input_view_when_data_fetching_ends_with_error() {
+        // GIVEN
+        inApp {
+            heroesError(Exception())
+            launchActivity(activityRule)
+        }
+
+        // WHEN
+        inMainScreen {
+            clickOnSearchButton()
+        }
+
+        // THEN
+        inMainScreen {
+            assertSearchButtonEnabled()
+            assertSearchInputEnabled()
+        }
+    }
+
+    /**
     GIVEN Search results displayed
     WHEN  User press on search item
     THEN  Hero details screen opened
